@@ -1,0 +1,347 @@
+%-------------------------
+% Resume in Latex
+% Based off of: https://github.com/sb2nov/resume
+% and Jake Gutierrez's version of it
+% at https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs
+% inspired by https://practicaltypography.com/resumes.html
+% License : MIT
+%------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[margin = 1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{multicol}
+
+%--------------UNDERLINING---------------
+% taken from https://alexwlchan.net/2017/10/latex-underlines/
+
+\usepackage{contour}
+\usepackage{ulem}
+
+\renewcommand{\ULdepth}{3.8pt}
+\contourlength{0.8pt}
+
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+%----------------------------------------
+
+\graphicspath{ {./Images/} }
+
+%----------FONT OPTIONS----------
+\usepackage{fontspec}
+\usepackage{fontawesome5}
+
+% I could have just used the charter package here for the font I wanted...
+% but I'd still need to change compiler to XeLaTeX to include the title font
+% \usepackage{charter}
+
+\setmainfont{XCharter}
+
+\newfontfamily{\basictitle}{basictitlefont}[
+Path = Fonts/,
+Extension = .ttf,
+UprightFont = basictitlefont
+]
+% to use:
+% {\basictitle This text uses the basictitle font}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\iffalse
+% \iftrue
+\addtolength{\oddsidemargin}{0.3in}
+\addtolength{\marginparsep}{0.3in}
+\addtolength{\evensidemargin}{0.3in}
+\addtolength{\textwidth}{-0.5in}
+\addtolength{\topmargin}{0.3in}
+\addtolength{\textheight}{0.3in}
+\fi
+
+\urlstyle{same}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+    {\color{gray}\titlerule} \vspace{-5pt}
+    \vspace{8pt}\scshape\raggedright\normalfont
+}{}{0pt}{}
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+%-------------------------------------------
+%for sidebyside alignment (taken from my CV)
+% Two-columns
+\newcommand{\sidebyside}[2]{
+    \begin{multicols}{2}
+    #1 \columnbreak
+    #2 \end{multicols}
+}
+
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+% ----- TOGGLE PHOTO --------
+% comment out \iffalse and remove the % from \iftrue to toggle photo
+\iffalse
+% \iftrue
+\begin{wrapfigure}{R}{0.15\textwidth}
+\vspace{-35pt}
+\includegraphics[scale=0.20]{dp_cropped}
+\end{wrapfigure}
+\fi
+
+%----------HEADING----------
+
+{\basictitle \Huge \textbf{Anand A}}\vspace{0.2cm}
+\\
+
+% ----- TOGGLE FOR PHOTO ----
+% \vspace{10pt}
+
+\href{mailto:anandaani123@gmail.com}{
+    \faEnvelope
+    \thinspace \thinspace
+    \myuline{anandaani123@gmail.com}} $|$
+\href{https://www.linkedin.com/in/anand-a-752908aa/}{
+    \faLinkedin
+    \thinspace \thinspace        
+    \myuline{Anand A}} $|$
+\href{https://github.com/anand-nobody}{
+    \faGithub
+    \thinspace \thinspace
+    \myuline{anand-nobody}} $|$
+\faPhone
+\thinspace \thinspace
++91 8675381230
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Indian Institute of Management Bangalore}{Bengaluru, India}
+      {Prof. N S Ramasamy Pre Doctoral Fellowship, Finance \& Accounting}{June 2019 -- Aug 2020}
+      \vspace{0.2cm}
+    \resumeSubheading
+      {Bidhan Chandra Krishi Viswavidyalaya}{West Bengal, India}
+      {M.Sc., Agricultural Economics}{Aug 2017 -- May 2019}
+\vspace{0.2cm}
+    \resumeSubheading
+      {Tamil Nadu Agricultural University, AC\&RI}{Madurai, India}
+      {B.Sc., Agriculture}{Jul 2013 -- May 2017}
+\resumeSubHeadingListEnd 
+
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+  
+    \resumeSubheading
+      {Institute of Rural Management Anand}{Anand, India}
+      {Consultant}{Sep 2020 -- Present}
+      \vspace{0.1cm}
+      \resumeItemListStart
+        \resumeItem{A Study on Priority Sector Lending: Pan Indian Study for Assessing Potential for Enhancing Credit to Priority Sectors}
+        \resumeItem{Data Collection form secondary sources, processing, analysis, and visualisation; Consultancy and Report Writing are the responsibilities I am handling in this position.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------RESEARCH-----------
+\section{Research}
+
+    \resumeSubHeadingListStart
+    
+    \resumeSubheading
+      {School Enrolment \& Gender: Differential Treatment of Female Children in Indian Households}{}
+      {Term-paper for the course "Education Economics and Policy". Tutor -- Dr Soham Sahoo, IIMB}{}
+     
+     % \resumeItemListStart
+     %   \resumeItem{Volunteering for the on-going study titled "An Assessment of the Performance of Andhra Pradesh State Information Commission"}
+     % \resumeItemListEnd
+\vspace{0.2cm}  
+     \resumeSubheading
+      {Drivers of Social Entrepreneurship}{}
+      {Term-paper for the course "Entrepreneurship Classics".  Tutor -- Prof Saras D Sarasvathy, Univ of Virginia}{}
+
+\vspace{0.2cm}  
+     \resumeSubheading
+      {Economics of Mango Production in Salem District of Tamil Nadu}{}
+      {Master's dissertation.  Chairman -- Dr Soumitra Chatterjee, BCKV}{}     
+\vspace{0.2cm}  
+     \resumeSubheading
+      {Production and Marketing of Organic Products in Madurai District of Tamil Nadu}{}
+      {Bachelor's Project.  Chairman -- Dr Prahadeeswaran M, TNAU}{}          
+\resumeSubHeadingListEnd
+%-----------CCAs-----------
+\section{Extracurriculars}
+    \resumeSubHeadingListStart
+    
+    \resumeSubheading
+      {Andhra Pradesh chapter of United forum for Right to Information}{}
+      {Volunteer}{Nov 2020 -- Present}
+      \resumeItemListStart
+        \resumeItem{Volunteering for the on-going study titled "An Assessment of the Performance of Andhra Pradesh State Information Commission"}
+      \resumeItemListEnd
+ \vspace{0.2cm}   
+      \resumeSubheading
+      {Egalitarians}{}
+      {Co-Founder \& Member}{Jul 2020 -- Present}
+      \resumeItemListStart
+        \resumeItem{\textit{Egalitarians} is a not-for-profit voluntary organisation which focuses on Policy research, and monitors public services delivery to the rural poor.}
+      \resumeItemListEnd
+ \vspace{0.2cm}   
+      \resumeSubheading
+      {Madurai Toastmasters Club}{}
+      {Member}{Jan 2016 -- Present}
+      \resumeItemListStart
+        \resumeItem{I have been the \textit{Contest Master} for the \textit{"International Humorous Speech and Evaluation Contest"} (area level) held in 2016.}
+      \resumeItemListEnd    
+     
+\resumeSubHeadingListEnd
+%------------------------------------------
+\section{Scholarships \& Awards}
+ \resumeSubHeadingListStart
+  
+    \resumeSubheading
+     {Indian Council of Agricultural Research}{}
+     {National Talent Scholarship}{Aug 2017 -- May 2019}
+
+\resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Software Skills}
+
+  \resumeSubHeadingListStart
+  
+    \resumeSubheading
+     {R}{}
+     {Data Wrangling, Data Analysis and Visualisation, Dynamic documentation using R-markdown}{}
+ %     \resumeItemListStart
+%      \resumeItem{Data Wrangling, Data Analysis and Visualisation, Dynamic documentation using R-markdown, Book writing using R-Bookdown, Blog writing using R-Blogdown}
+%\resumeItemListEnd
+     
+\vspace{0.17cm}
+
+     \resumeSubheading
+    {LaTeX}{}
+    {Journal article writing and typesetting, Beamer presentation for academic slides preparation.}{}
+ %     \resumeItemListStart
+ %      \resumeItem{Journal article writing and typesetting, Beamer presentation for academic slides preparation.}
+%     \resumeItemListEnd
+
+\vspace{0.17cm}
+
+     \resumeSubheading
+     {SPSS}{}
+     {Data Analysis}{}
+     
+\vspace{0.17cm}
+
+     \resumeSubheading
+     {Mendeley}{}
+     {Bibliography \& Citations management}{}
+            
+
+\vspace{0.17cm}
+
+     \resumeSubheading
+     {Microsoft Office Suite}{}
+     {}{}
+       
+
+\resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\section{Language Skills}
+\textbf{English} -- Proficient; \textbf{Tamil} -- Native; \textbf{Telugu} -- To Speak; \textbf{Hindi} -- Beginner; \textbf{Bengali} -- Beginner
+%\sidebyside
+%{\begin{itemize}
+%    \item English -- Proficient
+%    \item Tamil -- Native
+%    \item Telugu -- To Speak
+%\end{itemize}}
+%{\begin{itemize}
+%    \item Hindi -- Beginner
+%    \item Bengali -- Beginner
+%\end{itemize}}
+%-------------------------------------------
+\section{Conferences \& Workshops}
+%\onehalfspacing
+
+{\textbf{Statistical Analysis Using Open-source Softwares} -- Pondicherry Research Enthusiasts Forum (Oct 2020); \textbf{Statistical Computing Using R Software} -- ANGRAU (Sept 2020); \textbf{Asexual Spectrum} - Indian Asexuals (May 2020); \textbf{Meta Analysis Workshop} -- Prof Amit Karna, IIMA (Dec 2019); \textbf{XIV International Conference on Public Policy \& Management} -- IIMB (Aug 2019)}
+
+%-------------------------------------------
+\section{References}
+\begin{multicols}{2}
+{\textbf{Dr Deepak Malghan}\\ Associate Professor\\Center for Public Policy\\ Indian Institute of Management Bangalore\\ dmalghan@iimb.ac.in}\\
+
+{\textbf{Dr Abhinav Anand}\\ Assistant Professor\\ Finance \& Accounting\\ Indian Institute of Management Bangalore\\ abhinav.anand@iimb.ac.in}
+\end{multicols}
+
+%-------------------------------------------
+\end{document}
